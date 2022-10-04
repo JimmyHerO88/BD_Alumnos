@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="alumnos.js"></script>
+    <script src="https://kit.fontawesome.com/dee10518ae.js" crossorigin="anonymous"></script>
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>DEV.f</title>
+</head>
+<body onload="vistaListado()">
+
+    <div class="container-fluid" id="contenedor">
+        <header>
+
+        </header>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">DEV.F</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <button class="btn btn-primary " type="button" onclick="vistaListado()">Alumnos Inscritos</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-primary " type="button" onclick="vistaInscripciones()">Inscripciones</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-primary" type="button" onclick="vistaMaterias()">Materias</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-primary" type="button" onclick="vistaGrupos()">Grupos</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section>
+
+            <div class="container-sm" id="listado">
+                <h2 class="pt-3">Alumnos Inscritos</h2>
+                <table class="table table-dark table.striped table-hover">
+                    <tr>
+                        <td>Id</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Edad</td>
+                        <td>Grupo</td>
+                        <td>Materia</td>
+                        <td>Calificación</td>
+                        <td>Opciones</td>
+                    </tr>
+                    <tbody id="tbAlumnos"></tbody>
+                </table>
+            </div>
+
+            <div class="container-sm" id="inscripciones">
+                <h2 class="pt-3">Inscripciones</h2>
+                <form >
+                    <div class="mb-3">
+                      <label for="firstName" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="firstName" aria-describedby="Nombre" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="lastName" class="form-label">Apellidos</label>
+                      <input type="text" class="form-control" id="lastName" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="age" class="form-label">Edad</label>
+                      <input type="number" class="form-control" id="age" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="newStudent()">Inscribir Alumno</button>
+                  </form>
+            </div>
+
+            <div class="container-sm" id="materias">
+                <h2 class="pt-3">Asignación de Materias</h2>
+                <form >
+
+                    <label for="alumno">Elige un alumno:</label>
+                    <select class="form-select form-select-lg mb-3" id="selectAlumno" aria-label=".form-select-lg example">
+                        
+                    </select>
+
+                    <label for="alumno">Asigna una materia:</label>
+                    <select class="form-select form-select-lg mb-3" id="materia" aria-label=".form-select-lg example">
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JAVASCRIPT">JAVASCRIPT</option>
+                    </select>
+
+                </form>
+            </div>
+
+            <div class="container-sm" id="grupos">
+                <h2 class="pt-3">Asignación de Grupos</h2>
+                <form >
+                    <select class="form-select form-select-lg mb-3" name="materia" id="materia">
+                        <option value="GA">Grupo "A" de 18 a 20 años</option>
+                        <option value="GB">Grupo "B" de 21 a 25 años</option>
+                        <option value="GC">Grupo "C" de 26 a 40 años</option>
+                    </select>
+
+                </form>
+            </div>
+
+        </section>
+
+    </div>
+    
+</body>
+</html>
